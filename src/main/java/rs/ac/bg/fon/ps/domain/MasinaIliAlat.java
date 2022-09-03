@@ -8,21 +8,45 @@ package rs.ac.bg.fon.ps.domain;
 import java.util.Objects;
 
 /**
+ * Predstavlja masinu ili alat koji imaju svoj ID, naziv, kolicinu u magacinu i kolicinu na zaduzenju.
  *
  * @author ACER
  */
 public class MasinaIliAlat implements OpstiDomenskiObjekat {
-
+	
+	/**
+	 * ID masine ili alata
+	 */
 	private Long masinaIliAlatID;
+	/**
+	 * Naziv masine ili alata
+	 */
 	private String naziv;
+	/**
+	 * Broj komada te masine ili alata koji se nalaze na stanju u magacinu
+	 */
 	private Integer kolicinaUMagacinu;
+	/**
+	 * Broj komada te masine ili alata koji se nalaze na zaduzenju
+	 */
 	private Integer kolicinaNaZaduzenju;
 
+	/**
+	 * Postavlja kolicinu u magacinu i kolicinu na zaduzenju na 0 za novu masinu ili alat.
+	 */
 	public MasinaIliAlat() {
 		this.kolicinaUMagacinu = 0;
 		this.kolicinaNaZaduzenju = 0;
 	}
 
+	/**
+	 * Postavlja ID, naziv, kolicinu u magacinu i kolicinu na zaduzenju masine ili alata na unete vrednosti.
+	 * 
+	 * @param masinaIliAlatID novi ID masine ili alata
+	 * @param naziv novi naziv masine ili alata
+	 * @param kolicinaUMagacinu nova kolicina u magacinu masine ili alata
+	 * @param kolicinaNaZaduzenju nova kolicina na zaduzenju masine ili alata
+	 */
 	public MasinaIliAlat(Long masinaIliAlatID, String naziv, Integer kolicinaUMagacinu, Integer kolicinaNaZaduzenju) {
 		this.masinaIliAlatID = masinaIliAlatID;
 		this.naziv = naziv;
@@ -30,34 +54,74 @@ public class MasinaIliAlat implements OpstiDomenskiObjekat {
 		this.kolicinaNaZaduzenju = kolicinaNaZaduzenju;
 	}
 
+	/**
+	 * Vraca kolicinu na zaduzenju masine ili alata.
+	 * 
+	 * @return kolicina na zaduzenju masine ili alata kao ceo broj
+	 */
 	public Integer getKolicinaNaZaduzenju() {
 		return kolicinaNaZaduzenju;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut kolicina na zaduzenju masine ili alata.
+	 * 
+	 * @param kolicinaNaZaduzenju nova kolicina na zaduzenju masine ili alata
+	 */
 	public void setKolicinaNaZaduzenju(Integer kolicinaNaZaduzenju) {
 		this.kolicinaNaZaduzenju = kolicinaNaZaduzenju;
 	}
 
+	/**
+	 * Vraca ID masine ili alata.
+	 * 
+	 * @return ID masine ili alata kao ceo broj tipa Long
+	 */
 	public Long getMasinaIliAlatID() {
 		return masinaIliAlatID;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut ID masine ili alata.
+	 * 
+	 * @param masinaIliAlatID novi ID masine ili alata
+	 */
 	public void setMasinaIliAlatID(Long masinaIliAlatID) {
 		this.masinaIliAlatID = masinaIliAlatID;
 	}
 
+	/**
+	 * Vraca naziv masine ili alata.
+	 * 
+	 * @return naziv masine ili alata kao String
+	 */
 	public String getNaziv() {
 		return naziv;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut naziv masine ili alata.
+	 * 
+	 * @param naziv novi naziv masine ili alata
+	 */
 	public void setNaziv(String naziv) {
 		this.naziv = naziv;
 	}
 
+	/**
+	 * Vraca kolicinu u magacinu masine ili alata.
+	 * 
+	 * @return kolicina u magacinu masine ili alata kao ceo broj
+	 */
 	public Integer getKolicinaUMagacinu() {
 		return kolicinaUMagacinu;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut kolicina u magacinu masine ili alata.
+	 * 
+	 * @param kolicinaUMagacinu nova kolicina u magacinu masine ili alata
+	 */
 	public void setKolicinaUMagacinu(Integer kolicinaUMagacinu) {
 		this.kolicinaUMagacinu = kolicinaUMagacinu;
 	}
@@ -69,6 +133,15 @@ public class MasinaIliAlat implements OpstiDomenskiObjekat {
 		return hash;
 	}
 
+	/**
+	 * Poredi dve masine ili alata po ID-u.
+	 * 
+	 * @return
+	 * <ul>
+	 * <li>true - ako je ID isti za obe masine ili alat</li>
+	 * <li>false - ako to nije slucaj</li>
+	 * </ul>
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -87,6 +160,11 @@ public class MasinaIliAlat implements OpstiDomenskiObjekat {
 		return true;
 	}
 
+	/**
+	 * Vraca String koji sadrzi naziv masine ili alata.
+	 * 
+	 * @return String koji sadrzi naziv masine ili alata
+	 */
 	@Override
 	public String toString() {
 		return naziv;

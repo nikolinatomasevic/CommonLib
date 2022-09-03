@@ -11,20 +11,46 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * Predstavlja revers koji ima svoj broj, datum izdavanja, radnika na koga se odnosi i listu stavki.
+ * Revers se odnosi na samo jednog radnika koji moze zaduziti vise masina ili alata.
  *
  * @author ACER
  */
 public class Revers implements OpstiDomenskiObjekat {
 
+	/**
+	 * Jedinstveni broj reversa
+	 */
 	private Long brojReversa;
+	/**
+	 * Datum izdavanja reversa
+	 */
 	private Date datumIzdavanja;
+	/**
+	 * Radnik na koga se odnosi taj revers
+	 */
 	private Radnik radnik;
+	/**
+	 * Lista stavki reversa
+	 * @see StavkaReversa
+	 */
 	private List<StavkaReversa> stavke;
 
+	/**
+	 * Inicijalizuje novi revers.
+	 */
 	public Revers() {
 		stavke = new ArrayList<>();
 	}
 
+	/**
+	 * Postavlja broj reversa, datum izdavanja, radnika i stavke reversa na unete vrednosti.
+	 * 
+	 * @param brojReversa novi broj reversa
+	 * @param datumIzdavanja novi datum izdavanja reversa
+	 * @param radnik novi radnik na koga se odnosi revers
+	 * @param stavke nova lista stavki reversa
+	 */
 	public Revers(Long brojReversa, Date datumIzdavanja, Radnik radnik, List<StavkaReversa> stavke) {
 		this.brojReversa = brojReversa;
 		this.datumIzdavanja = datumIzdavanja;
@@ -32,34 +58,75 @@ public class Revers implements OpstiDomenskiObjekat {
 		this.stavke = stavke;
 	}
 
+	/**
+	 * Vraca broj reversa.
+	 * 
+	 * @return broj reversa kao ceo broj tipa Long
+	 */
 	public Long getBrojReversa() {
 		return brojReversa;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut broj reversa.
+	 * 
+	 * @param brojReversa novi broj reversa
+	 */
 	public void setBrojReversa(Long brojReversa) {
 		this.brojReversa = brojReversa;
 	}
 
+	/**
+	 * Vraca datum izdavanja reversa.
+	 * 
+	 * @return datum izdavanja reversa
+	 */
 	public Date getDatumIzdavanja() {
 		return datumIzdavanja;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut datum izdavanja reversa.
+	 * 
+	 * @param datumIzdavanja novi datum izdavanja reversa
+	 */
 	public void setDatumIzdavanja(Date datumIzdavanja) {
 		this.datumIzdavanja = datumIzdavanja;
 	}
 
+	/**
+	 * Vraca radnika na koga se odnosi revers.
+	 * 
+	 * @return radnik na koga se odnosi revers kao objekat tipa Radnik
+	 * @see Radnik
+	 */
 	public Radnik getRadnik() {
 		return radnik;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut radnik.
+	 * 
+	 * @param radnik novi radnik na koga se odnosi revers
+	 */
 	public void setRadnik(Radnik radnik) {
 		this.radnik = radnik;
 	}
 
+	/**
+	 * Vraca sve stavke reversa.
+	 * 
+	 * @return lista sa svim stavkama reversa
+	 */
 	public List<StavkaReversa> getStavke() {
 		return stavke;
 	}
 
+	/**
+	 * Postavlja stavke reversa.
+	 * 
+	 * @param stavke sve stavke reversa unete u jednu listu
+	 */
 	public void setStavke(List<StavkaReversa> stavke) {
 		this.stavke = stavke;
 	}
@@ -71,6 +138,15 @@ public class Revers implements OpstiDomenskiObjekat {
 		return hash;
 	}
 
+	/**
+	 * Poredi dva reversa po broju reversa.
+	 * 
+	 * @return
+	 * <ul>
+	 * <li>true - ako je broj reversa isti za oba reversa</li>
+	 * <li>false - ako to nije slucaj</li>
+	 * </ul>
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -89,6 +165,11 @@ public class Revers implements OpstiDomenskiObjekat {
 		return true;
 	}
 
+	/**
+	 * Vraca String sa svim podacima o reversu.
+	 * 
+	 * @return String sa svim podacima o reversu
+	 */
 	@Override
 	public String toString() {
 		return "Revers{" + "brojReversa=" + brojReversa + ", datumIzdavanja=" + datumIzdavanja + ", radnik=" + radnik

@@ -9,22 +9,55 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
+ * Predstavlja stavku reversa koja ima svoj redni broj, zaduzenu kolicinu, datum razduzenja, razduzenu kolicinu i masinu ili alat na koji se odnosi.
+ * Jedna stavka reversa se odnosi na jednu masinu ili alat.
  *
  * @author ACER
  */
 public class StavkaReversa implements OpstiDomenskiObjekat {
 
+	/**
+	 * Revers kome pripada ta stavka reversa
+	 */
 	private Revers revers;
+	/**
+	 * Redni broj stavke reversa u reversu
+	 */
 	private Integer rb;
+	/**
+	 * Zaduzena kolicina masine ili alata iz te stavke reversa
+	 */
 	private Integer zaduzenaKolicina;
+	/**
+	 * Datum razduzenja celokupne zaduzene kolicine masine ili alata stavke reversa
+	 */
 	private Date datumRazduzenja;
+	/**
+	 * Razduzena kolicina stavke reversa
+	 */
 	private Integer razduzenaKolicina;
+	/**
+	 * Masina ili alat na koju se odnosi stavka reversa
+	 */
 	private MasinaIliAlat masinaIliAlat;
 
+	/**
+	 * Postavlja razduzenu kolicinu na 0 za novu stavku reversa.
+	 */
 	public StavkaReversa() {
 		this.razduzenaKolicina = 0;
 	}
 
+	/**
+	 * Postavlja revers, redni broj, zaduzenu kolicinu, datum razduzenja, razduzenu kolicinu i masinu ili alat na unete vrednosti.
+	 * 
+	 * @param revers novi revers
+	 * @param rb novi redni broj stavke reversa
+	 * @param zaduzenaKolicina nova razduzena kolicina stavke reversa
+	 * @param datumRazduzenja novi datum razduzenja stavke reversa
+	 * @param razduzenaKolicina nova razduzena kolicina stavke reversa
+	 * @param masinaIliAlat nova masina ili alat na koju se odnosi stavka reversa
+	 */
 	public StavkaReversa(Revers revers, Integer rb, Integer zaduzenaKolicina, Date datumRazduzenja,
 			Integer razduzenaKolicina, MasinaIliAlat masinaIliAlat) {
 		this.revers = revers;
@@ -35,50 +68,111 @@ public class StavkaReversa implements OpstiDomenskiObjekat {
 		this.masinaIliAlat = masinaIliAlat;
 	}
 
+	/**
+	 * Vraca revers kome pripada ta stavka reversa.
+	 * 
+	 * @return revers kome pripada ta stavka reversa kao objekat tipa Revers
+	 * @see Revers
+	 */
 	public Revers getRevers() {
 		return revers;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut revers kome pripada ta stavka reversa.
+	 * 
+	 * @param revers novi revers kome pripada ta stavka reversa
+	 */
 	public void setRevers(Revers revers) {
 		this.revers = revers;
 	}
 
+	/**
+	 * Vraca redni broj stavke reversa.
+	 * 
+	 * @return redni broj stavke reversa kao ceo broj
+	 */
 	public Integer getRb() {
 		return rb;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut redni broj stavke reversa.
+	 * 
+	 * @param rb novi redni broj stavke reversa
+	 */
 	public void setRb(Integer rb) {
 		this.rb = rb;
 	}
 
+	/**
+	 * Vraca zaduzenu kolicinu stavke reversa.
+	 * 
+	 * @return zaduzena kolicina stavke reversa kao ceo broj
+	 */
 	public Integer getZaduzenaKolicina() {
 		return zaduzenaKolicina;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut zaduzena kolicina stavke reversa.
+	 * 
+	 * @param zaduzenaKolicina nova zaduzena kolicina stavke reversa
+	 */
 	public void setZaduzenaKolicina(Integer zaduzenaKolicina) {
 		this.zaduzenaKolicina = zaduzenaKolicina;
 	}
 
+	/**
+	 * Vraca datum razduzenja stavke reversa.
+	 * 
+	 * @return datum razduzenja stavke reversa
+	 */
 	public Date getDatumRazduzenja() {
 		return datumRazduzenja;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut datum razduzenja stavke reversa.
+	 * 
+	 * @param datumRazduzenja novi datum razduzenja stavke reversa
+	 */
 	public void setDatumRazduzenja(Date datumRazduzenja) {
 		this.datumRazduzenja = datumRazduzenja;
 	}
 
+	/**
+	 * Vraca razduzenu kolicinu stavke reversa.
+	 * 
+	 * @return razduzena kolicina stavke reversa kao ceo broj
+	 */
 	public Integer getRazduzenaKolicina() {
 		return razduzenaKolicina;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut razduzena kolicina stavke reversa.
+	 * 
+	 * @param razduzenaKolicina nova razduzena kolicina stavke reversa
+	 */
 	public void setRazduzenaKolicina(Integer razduzenaKolicina) {
 		this.razduzenaKolicina = razduzenaKolicina;
 	}
 
+	/**
+	 * Vraca masinu ili alat stavke reverse.
+	 * 
+	 * @return masina ili alat stavke reversa tipa MasinaIliAlat
+	 */
 	public MasinaIliAlat getMasinaIliAlat() {
 		return masinaIliAlat;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut masina ili alat stavke reversa.
+	 * 
+	 * @param masinaIliAlat nova masina ili alat stavke reversa
+	 */
 	public void setMasinaIliAlat(MasinaIliAlat masinaIliAlat) {
 		this.masinaIliAlat = masinaIliAlat;
 	}
@@ -91,6 +185,15 @@ public class StavkaReversa implements OpstiDomenskiObjekat {
 		return hash;
 	}
 
+	/**
+	 * Poredi dve stavke reversa po reversu kome pripada ta stavka i rednom broju.
+	 * 
+	 * @return
+	 * <ul>
+	 * <li>true - ako je revers kome pripada ta stavka i redni broj stavke isti za obe stavke reversa</li>
+	 * <li>false - ako to nije slucaj</li>
+	 * </ul>
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -112,6 +215,11 @@ public class StavkaReversa implements OpstiDomenskiObjekat {
 		return true;
 	}
 
+	/**
+	 * Vraca String sa podacima o rednom broju, zaduzenoj kolicini, datumu razduzenja, razduzenoj kolicini i masini ili alatu stavke reversa.
+	 * 
+	 * @return String sa podacima o rednom broju, zaduzenoj kolicini, datumu razduzenja, razduzenoj kolicini i masini ili alatu stavke reversa
+	 */
 	@Override
 	public String toString() {
 		return "Rb:" + rb + ", zaduzenaKolicina:" + zaduzenaKolicina + ", datumRazduzenja:" + datumRazduzenja
