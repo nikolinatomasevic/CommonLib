@@ -8,21 +8,53 @@ package rs.ac.bg.fon.ps.domain;
 import java.util.Objects;
 
 /**
+ * Predstavlja radnika koji ima svoj ID, ime, prezime, broj telefona, mejl i radno mesto.
  *
  * @author ACER
  */
 public class Radnik implements OpstiDomenskiObjekat {
 
+	/**
+	 * ID radnika
+	 */
 	private Long radnikID;
+	/**
+	 * Ime radnika.
+	 */
 	private String ime;
+	/**
+	 * Prezime radnika
+	 */
 	private String prezime;
+	/**
+	 * Broj telefona radnika
+	 */
 	private String brojTelefona;
+	/**
+	 * Mejl radnika
+	 */
 	private String mejl;
+	/**
+	 * Radno mesto radnika
+	 */
 	private RadnoMesto radnoMesto;
 
+	/**
+	 * Inicijalizuje novog radnika.
+	 */
 	public Radnik() {
 	}
 
+	/**
+	 * Postavlja ID, ime, prezime, broj telefona, mejl i radno mesto radnika na unete vrednosti.
+	 * 
+	 * @param radnikID novi ID radnika
+	 * @param ime novo ime radnika
+	 * @param prezime novo prezime radnika
+	 * @param brojTelefona novi broj telefona radnika
+	 * @param mejl novi mejl radnika
+	 * @param radnoMesto novo radno mesto radnika
+	 */
 	public Radnik(Long radnikID, String ime, String prezime, String brojTelefona, String mejl, RadnoMesto radnoMesto) {
 		this.radnikID = radnikID;
 		this.ime = ime;
@@ -32,50 +64,110 @@ public class Radnik implements OpstiDomenskiObjekat {
 		this.radnoMesto = radnoMesto;
 	}
 
+	/**
+	 * Vraca radno mesto radnika.
+	 * 
+	 * @return radno mesto radnika kao objekat tipa RadnoMesto
+	 */
 	public RadnoMesto getRadnoMesto() {
 		return radnoMesto;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut radno mesto radnika.
+	 * 
+	 * @param radnoMesto novo radno mesto radnika
+	 */
 	public void setRadnoMesto(RadnoMesto radnoMesto) {
 		this.radnoMesto = radnoMesto;
 	}
 
+	/**
+	 * Vraca ID radnika.
+	 * 
+	 * @return ID radnika kao ceo broj tipa Long
+	 */
 	public Long getRadnikID() {
 		return radnikID;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut ID radnika.
+	 * 
+	 * @param radnikID novi ID radnika
+	 */
 	public void setRadnikID(Long radnikID) {
 		this.radnikID = radnikID;
 	}
 
+	/**
+	 * Vraca ime radnika.
+	 * 
+	 * @return ime radnika kao String
+	 */
 	public String getIme() {
 		return ime;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut ime radnika.
+	 * 
+	 * @param ime novo ime radnika
+	 */
 	public void setIme(String ime) {
 		this.ime = ime;
 	}
 
+	/**
+	 * Vraca prezime radnika.
+	 * 
+	 * @return prezime radnika kao String
+	 */
 	public String getPrezime() {
 		return prezime;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut prezime radnika.
+	 * 
+	 * @param prezime novo prezime radnika
+	 */
 	public void setPrezime(String prezime) {
 		this.prezime = prezime;
 	}
 
+	/**
+	 * Vraca broj telefona radnika.
+	 * 
+	 * @return broj telefona radnika kao String
+	 */
 	public String getBrojTelefona() {
 		return brojTelefona;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut broj telefona radnika.
+	 * 
+	 * @param brojTelefona novi broj telefona radnika
+	 */
 	public void setBrojTelefona(String brojTelefona) {
 		this.brojTelefona = brojTelefona;
 	}
 
+	/**
+	 * Vraca mejl radnika.
+	 * 
+	 * @return mejl radnika kao String
+	 */
 	public String getMejl() {
 		return mejl;
 	}
 
+	/**
+	 * Postavlja novu vrednost za atribut mejl radnika.
+	 * 
+	 * @param mejl novi mejl radnika
+	 */
 	public void setMejl(String mejl) {
 		this.mejl = mejl;
 	}
@@ -87,6 +179,15 @@ public class Radnik implements OpstiDomenskiObjekat {
 		return hash;
 	}
 
+	/**
+	 * Poredi dva radnika po ID-u.
+	 * 
+	 * @return
+	 * <ul>
+	 * <li>true - ako je ID isti za oba radnika</li>
+	 * <li>false - ako to nije slucaj</li>
+	 * </ul>
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -105,6 +206,11 @@ public class Radnik implements OpstiDomenskiObjekat {
 		return true;
 	}
 
+	/**
+	 * Vraca String koji sadrzi ime i prezime radnika.
+	 * 
+	 * @return String koji sadrzi ime i prezime radnika
+	 */
 	@Override
 	public String toString() {
 		return ime + " " + prezime;
