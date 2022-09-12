@@ -10,7 +10,7 @@ import java.util.Objects;
 /**
  * Predstavlja radno mesto radnika u firmi koje ima svoju sifru i naziv.
  *
- * @author ACER
+ * @author nikolinatomasevic
  */
 public class RadnoMesto implements OpstiDomenskiObjekat {
 

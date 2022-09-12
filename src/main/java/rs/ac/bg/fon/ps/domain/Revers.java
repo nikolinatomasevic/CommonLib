@@ -14,7 +14,7 @@ import java.util.Objects;
  * Predstavlja revers koji ima svoj broj, datum izdavanja, radnika na koga se odnosi i listu stavki.
  * Revers se odnosi na samo jednog radnika koji moze zaduziti vise masina ili alata.
  *
- * @author ACER
+ * @author nikolinatomasevic
  */
 public class Revers implements OpstiDomenskiObjekat {
 

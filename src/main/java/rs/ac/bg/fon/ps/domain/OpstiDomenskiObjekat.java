@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * Interfejs koji predstavlja opsti domenski objekat.
  *
- * @author ACER
+ * @author nikolinatomasevic
  */
 public interface OpstiDomenskiObjekat extends Serializable {
 

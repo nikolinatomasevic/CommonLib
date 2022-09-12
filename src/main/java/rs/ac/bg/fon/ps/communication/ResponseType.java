@@ -7,7 +7,7 @@ package rs.ac.bg.fon.ps.communication;
 
 /**
  *
- * @author ACER
+ * @author nikolinatomasevic
  */
 public enum ResponseType {
 	SUCCES, ERROR

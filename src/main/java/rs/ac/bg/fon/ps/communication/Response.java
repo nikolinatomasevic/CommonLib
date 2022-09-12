@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * Predstavlja odgovor servera.
  *
- * @author ACER
+ * @author nikolinatomasevic
  */
 public class Response implements Serializable {
 

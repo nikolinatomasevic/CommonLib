@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * Predstavlja zahtev koji klijent salje serveru.
  *
- * @author ACER
+ * @author nikolinatomasevic
  */
 public class Request implements Serializable {
 

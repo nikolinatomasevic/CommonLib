@@ -7,7 +7,7 @@ package rs.ac.bg.fon.ps.communication;
 
 /**
  *
- * @author ACER
+ * @author nikolinatomasevic
  */
 public class Operation {
 	public static final int LOGIN = 1;

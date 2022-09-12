@@ -10,7 +10,7 @@ import java.util.Objects;
 /**
  * Predstavlja radnika koji ima svoj ID, ime, prezime, broj telefona, mejl i radno mesto.
  *
- * @author ACER
+ * @author nikolinatomasevic
  */
 public class Radnik implements OpstiDomenskiObjekat {
 

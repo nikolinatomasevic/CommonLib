@@ -10,7 +10,7 @@ import java.util.Objects;
 /**
  * Predstavlja masinu ili alat koji imaju svoj ID, naziv, kolicinu u magacinu i kolicinu na zaduzenju.
  *
- * @author ACER
+ * @author nikolinatomasevic
  */
 public class MasinaIliAlat implements OpstiDomenskiObjekat {
 	

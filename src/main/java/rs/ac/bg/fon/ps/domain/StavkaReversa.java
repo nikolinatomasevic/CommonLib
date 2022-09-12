@@ -12,7 +12,7 @@ import java.util.Objects;
  * Predstavlja stavku reversa koja ima svoj redni broj, zaduzenu kolicinu, datum razduzenja, razduzenu kolicinu i masinu ili alat na koji se odnosi.
  * Jedna stavka reversa se odnosi na jednu masinu ili alat.
  *
- * @author ACER
+ * @author nikolinatomasevic
  */
 public class StavkaReversa implements OpstiDomenskiObjekat {
 

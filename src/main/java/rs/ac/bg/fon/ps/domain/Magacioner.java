@@ -10,7 +10,7 @@ package rs.ac.bg.fon.ps.domain;
  * Nasledjuje klasu Radnik i ima dodatan atribut sifra koji predstavlja lozinku.
  * @see Radnik
  * 
- * @author ACER
+ * @author nikolinatomasevic
  */
 public class Magacioner extends Radnik implements OpstiDomenskiObjekat {
 
