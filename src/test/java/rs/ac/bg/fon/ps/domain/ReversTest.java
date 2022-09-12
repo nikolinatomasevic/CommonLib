@@ -65,6 +65,11 @@ class ReversTest {
 	}
 
 	@Test
+	void testSetDatumIzdavanjaNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> revers.setDatumIzdavanja(null));
+	}
+	
+	@Test
 	void testSetDatumIzdavanja() {
 		try {
 			Date datumIzdavanja = new SimpleDateFormat("dd.MM.yyyy.").parse("4.8.2022.");
@@ -77,12 +82,28 @@ class ReversTest {
 	}
 
 	@Test
+	void testSetRadnikNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> revers.setRadnik(null));
+	}
+	
+	@Test
 	void testSetRadnik() {
 		RadnoMesto radnoMesto = new RadnoMesto(2l, "Sef gradilista");
 		Radnik radnik = new Radnik(5l, "Marko", "Markovic", "0637792469", "marko.markovic@ps.fon.bg.ac.rs", radnoMesto);
 		revers.setRadnik(radnik);
 
 		assertEquals(radnik, revers.getRadnik());
+	}
+	
+	@Test
+	void testSetStavkeNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> revers.setStavke(null));
+	}
+	
+	@Test
+	void testSetStavkeNemaStavki() {
+		List<StavkaReversa> stavke = new LinkedList<StavkaReversa>();
+		assertThrows(java.lang.IllegalArgumentException.class, () -> revers.setStavke(stavke));
 	}
 
 	@Test

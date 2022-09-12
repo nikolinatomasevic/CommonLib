@@ -49,12 +49,22 @@ class RadnikTest {
 
 		assertEquals(1l, radnik.getRadnikID());
 	}
+	
+	@Test
+	void testSetImeNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> radnik.setIme(null));
+	}
 
 	@Test
 	void testSetIme() {
 		radnik.setIme("Marko");
 
 		assertEquals("Marko", radnik.getIme());
+	}
+	
+	@Test
+	void testSetPrezimeNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> radnik.setPrezime(null));
 	}
 
 	@Test
@@ -69,6 +79,16 @@ class RadnikTest {
 		radnik.setBrojTelefona("0654445162");
 
 		assertEquals("0654445162", radnik.getBrojTelefona());
+	}
+	
+	@Test
+	void testSetMejlNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> radnik.setMejl(null));
+	}
+	
+	@Test
+	void testSetMejlPrazanString() {
+		assertThrows(java.lang.IllegalArgumentException.class, () -> radnik.setMejl(""));
 	}
 
 	@Test

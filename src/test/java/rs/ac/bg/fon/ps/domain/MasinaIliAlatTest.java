@@ -40,6 +40,16 @@ class MasinaIliAlatTest {
 	}
 
 	@Test
+	void testSetKolicinaNaZaduzenjuNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> masinaIliAlat.setKolicinaNaZaduzenju(null));
+	}
+	
+	@Test
+	void testSetKolicinaNaZaduzenjuManjaOdNule() {
+		assertThrows(java.lang.IllegalArgumentException.class, () -> masinaIliAlat.setKolicinaNaZaduzenju(-5));
+	}
+	
+	@Test
 	void testSetKolicinaNaZaduzenju() {
 		masinaIliAlat.setKolicinaNaZaduzenju(23);
 
@@ -52,12 +62,27 @@ class MasinaIliAlatTest {
 
 		assertEquals(1l, masinaIliAlat.getMasinaIliAlatID());
 	}
+	
+	@Test
+	void testSetNazivNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> masinaIliAlat.setNaziv(null));
+	}
 
 	@Test
 	void testSetNaziv() {
 		masinaIliAlat.setNaziv("Brusilica");
 
 		assertEquals("Brusilica", masinaIliAlat.getNaziv());
+	}
+	
+	@Test
+	void testSetKolicinaUMagacinuNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> masinaIliAlat.setKolicinaUMagacinu(null));
+	}
+	
+	@Test
+	void testSetKolicinaUMagacinuManjaOdNule() {
+		assertThrows(java.lang.IllegalArgumentException.class, () -> masinaIliAlat.setKolicinaUMagacinu(-5));
 	}
 
 	@Test

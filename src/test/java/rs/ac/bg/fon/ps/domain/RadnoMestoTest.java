@@ -36,6 +36,11 @@ class RadnoMestoTest {
 
 		assertEquals(2l, radnoMesto.getSifraRM());
 	}
+	
+	@Test
+	void testSetNazivRMNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> radnoMesto.setNazivRM(null));
+	}
 
 	@Test
 	void testSetNazivRM() {

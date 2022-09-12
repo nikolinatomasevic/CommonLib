@@ -56,6 +56,11 @@ class StavkaReversaTest {
 
 		}
 	}
+	
+	@Test
+	void testSetReversNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> stavkaReversa.setRevers(null));
+	}
 
 	@Test
 	void testSetRevers() {
@@ -78,12 +83,32 @@ class StavkaReversaTest {
 	}
 
 	@Test
+	void testSetRbNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> stavkaReversa.setRb(null));
+	}
+	
+	@Test
+	void testSetRbManjiOdNule() {
+		assertThrows(java.lang.IllegalArgumentException.class, () -> stavkaReversa.setRb(0));
+	}
+	
+	@Test
 	void testSetRb() {
 		stavkaReversa.setRb(2);
 
 		assertEquals(2, stavkaReversa.getRb());
 	}
 
+	@Test
+	void testSetZaduzenaKolicinaNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> stavkaReversa.setZaduzenaKolicina(null));
+	}
+	
+	@Test
+	void testSetZaduzenaKolicinaManjaIliJednakaNuli() {
+		assertThrows(java.lang.IllegalArgumentException.class, () -> stavkaReversa.setZaduzenaKolicina(0));
+	}
+	
 	@Test
 	void testSetZaduzenaKolicina() {
 		stavkaReversa.setZaduzenaKolicina(6);
@@ -102,12 +127,27 @@ class StavkaReversaTest {
 
 		}
 	}
+	
+	@Test
+	void testSetRazduzenaKolicinaNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> stavkaReversa.setRazduzenaKolicina(null));
+	}
+	
+	@Test
+	void testSetRazduzenaKolicinaManjaOdNule() {
+		assertThrows(java.lang.IllegalArgumentException.class, () -> stavkaReversa.setRazduzenaKolicina(-1));
+	}
 
 	@Test
 	void testSetRazduzenaKolicina() {
 		stavkaReversa.setRazduzenaKolicina(3);
 
 		assertEquals(3, stavkaReversa.getRazduzenaKolicina());
+	}
+	
+	@Test
+	void testSetMasinaIliAlatNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> stavkaReversa.setMasinaIliAlat(null));
 	}
 
 	@Test
