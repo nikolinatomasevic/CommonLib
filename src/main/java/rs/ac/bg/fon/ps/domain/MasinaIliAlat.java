@@ -48,10 +48,10 @@ public class MasinaIliAlat implements OpstiDomenskiObjekat {
 	 * @param kolicinaNaZaduzenju nova kolicina na zaduzenju masine ili alata
 	 */
 	public MasinaIliAlat(Long masinaIliAlatID, String naziv, Integer kolicinaUMagacinu, Integer kolicinaNaZaduzenju) {
-		this.masinaIliAlatID = masinaIliAlatID;
-		this.naziv = naziv;
-		this.kolicinaUMagacinu = kolicinaUMagacinu;
-		this.kolicinaNaZaduzenju = kolicinaNaZaduzenju;
+		setMasinaIliAlatID(masinaIliAlatID);
+		setNaziv(naziv);
+		setKolicinaUMagacinu(kolicinaUMagacinu);
+		setKolicinaNaZaduzenju(kolicinaNaZaduzenju);
 	}
 
 	/**
@@ -67,8 +67,17 @@ public class MasinaIliAlat implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut kolicina na zaduzenju masine ili alata.
 	 * 
 	 * @param kolicinaNaZaduzenju nova kolicina na zaduzenju masine ili alata
+	 * @throws java.lang.NullPointerException u slucaju da je uneta kolicina na zaduzenju null
+	 * @throws java.lang.IllegalArgumentException u slucaju da je uneta kolicina na zaduzenju < 0
 	 */
 	public void setKolicinaNaZaduzenju(Integer kolicinaNaZaduzenju) {
+		if (kolicinaNaZaduzenju == null) {
+			throw new NullPointerException("Polje 'kolicina na zaduzenju' masine ili alata ne sme biti prazno!\n");
+		}
+		if (kolicinaNaZaduzenju < 0) {
+			throw new IllegalArgumentException(
+					"Polje 'kolicina na zaduzenju' masine ili alata mora sadrzati vrednost koja je >=0!");
+		}
 		this.kolicinaNaZaduzenju = kolicinaNaZaduzenju;
 	}
 
@@ -103,8 +112,12 @@ public class MasinaIliAlat implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut naziv masine ili alata.
 	 * 
 	 * @param naziv novi naziv masine ili alata
+	 * @throws java.lang.NullPointerException u slucaju da je uneti naziv null
 	 */
 	public void setNaziv(String naziv) {
+		if (naziv == null) {
+			throw new NullPointerException("Polje 'naziv' masine ili alata ne sme biti prazno!\n");
+		}
 		this.naziv = naziv;
 	}
 
@@ -121,8 +134,17 @@ public class MasinaIliAlat implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut kolicina u magacinu masine ili alata.
 	 * 
 	 * @param kolicinaUMagacinu nova kolicina u magacinu masine ili alata
+	 * @throws java.lang.NullPointerException u slucaju da je uneta kolicina u magacinu null
+	 * @throws java.lang.IllegalArgumentException u slucaju da je uneta kolicina u magacinu < 0
 	 */
 	public void setKolicinaUMagacinu(Integer kolicinaUMagacinu) {
+		if (kolicinaUMagacinu == null) {
+			throw new NullPointerException("Polje 'kolicina u magacinu' masine ili alata ne sme biti prazno!\n");
+		}
+		if (kolicinaUMagacinu < 0) {
+			throw new IllegalArgumentException(
+					"Polje 'kolicina u magacinu' masine ili alata mora sadrzati vrednost koja je >=0!");
+		}
 		this.kolicinaUMagacinu = kolicinaUMagacinu;
 	}
 

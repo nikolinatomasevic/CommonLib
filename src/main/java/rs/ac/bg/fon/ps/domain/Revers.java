@@ -52,10 +52,10 @@ public class Revers implements OpstiDomenskiObjekat {
 	 * @param stavke nova lista stavki reversa
 	 */
 	public Revers(Long brojReversa, Date datumIzdavanja, Radnik radnik, List<StavkaReversa> stavke) {
-		this.brojReversa = brojReversa;
-		this.datumIzdavanja = datumIzdavanja;
-		this.radnik = radnik;
-		this.stavke = stavke;
+		setBrojReversa(brojReversa);
+		setDatumIzdavanja(datumIzdavanja);
+		setRadnik(radnik);
+		setStavke(stavke);
 	}
 
 	/**
@@ -89,8 +89,12 @@ public class Revers implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut datum izdavanja reversa.
 	 * 
 	 * @param datumIzdavanja novi datum izdavanja reversa
+	 * @throws java.lang.NullPointerException u slucaju da je uneti datum izdavanja null
 	 */
 	public void setDatumIzdavanja(Date datumIzdavanja) {
+		if (datumIzdavanja == null) {
+			throw new NullPointerException("Polje 'datum izdavanja' reversa ne sme biti prazno!\n");
+		}
 		this.datumIzdavanja = datumIzdavanja;
 	}
 
@@ -108,8 +112,12 @@ public class Revers implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut radnik.
 	 * 
 	 * @param radnik novi radnik na koga se odnosi revers
+	 * @throws java.lang.NullPointerException u slucaju da je uneti radnik null
 	 */
 	public void setRadnik(Radnik radnik) {
+		if (radnik == null) {
+			throw new NullPointerException("Polje 'radnik' reversa ne sme biti prazno!\n");
+		}
 		this.radnik = radnik;
 	}
 
@@ -126,8 +134,16 @@ public class Revers implements OpstiDomenskiObjekat {
 	 * Postavlja stavke reversa.
 	 * 
 	 * @param stavke sve stavke reversa unete u jednu listu
+	 * @throws java.lang.NullPointerException u slucaju da su unete stavke null
+	 * @throws java.lang.IllegalArgumentException u slucaju da uneta lista ne sadrzi nijednu stavku
 	 */
 	public void setStavke(List<StavkaReversa> stavke) {
+		if (stavke == null) {
+			throw new NullPointerException("Polje 'stavke' reversa ne sme biti prazno!\n");
+		}
+		if (stavke.size() == 0) {
+			throw new IllegalArgumentException("Revers mora sadrzati barem jednu stavku!\n");
+		}
 		this.stavke = stavke;
 	}
 

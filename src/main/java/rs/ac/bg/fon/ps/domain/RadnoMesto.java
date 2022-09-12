@@ -35,8 +35,8 @@ public class RadnoMesto implements OpstiDomenskiObjekat {
 	 * @param nazivRM novi naziv radnog mesta
 	 */
 	public RadnoMesto(Long sifraRM, String nazivRM) {
-		this.sifraRM = sifraRM;
-		this.nazivRM = nazivRM;
+		setSifraRM(sifraRM);
+		setNazivRM(nazivRM);
 	}
 
 	/**
@@ -70,8 +70,12 @@ public class RadnoMesto implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut naziv radnog mesta.
 	 * 
 	 * @param nazivRM novi naziv radno mesta
+	 * @throws java.lang.NullPointerException u slucaju da je uneti naziv null
 	 */
 	public void setNazivRM(String nazivRM) {
+		if (nazivRM == null) {
+			throw new NullPointerException("Polje 'naziv' radnog mesta ne sme biti prazno\n!");
+		}
 		this.nazivRM = nazivRM;
 	}
 

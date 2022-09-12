@@ -38,7 +38,7 @@ public class Magacioner extends Radnik implements OpstiDomenskiObjekat {
 	 */
 	public Magacioner(Long radnikID, String ime, String prezime, String brojTelefona, String mejl, String sifra) {
 		super(radnikID, ime, prezime, brojTelefona, mejl, new RadnoMesto(1l, "Radnik u magacinu"));
-		this.sifra = sifra;
+		setSifra(sifra);
 	}
 
 	/**
@@ -54,8 +54,16 @@ public class Magacioner extends Radnik implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut sifra magacionera.
 	 * 
 	 * @param sifra nova sifra magacionera
+	 * @throws java.lang.NullPointerException u slucaju da je uneta sifra null
+	 * @throws java.lang.IllegalArgumentException u slucaju da je uneta sifra prazan String
 	 */
 	public void setSifra(String sifra) {
+		if (sifra == null) {
+			throw new NullPointerException("Polje 'sifra' magacionera ne sme biti prazno\n!");
+		}
+		if (sifra.isEmpty()) {
+			throw new IllegalArgumentException("Polje 'sifra' magacionera ne sme biti prazno\n!");
+		}
 		this.sifra = sifra;
 	}
 

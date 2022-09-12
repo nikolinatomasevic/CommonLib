@@ -56,12 +56,12 @@ public class Radnik implements OpstiDomenskiObjekat {
 	 * @param radnoMesto novo radno mesto radnika
 	 */
 	public Radnik(Long radnikID, String ime, String prezime, String brojTelefona, String mejl, RadnoMesto radnoMesto) {
-		this.radnikID = radnikID;
-		this.ime = ime;
-		this.prezime = prezime;
-		this.brojTelefona = brojTelefona;
-		this.mejl = mejl;
-		this.radnoMesto = radnoMesto;
+		setRadnikID(radnikID);
+		setIme(ime);
+		setPrezime(prezime);
+		setBrojTelefona(brojTelefona);
+		setMejl(mejl);
+		setRadnoMesto(radnoMesto);
 	}
 
 	/**
@@ -113,8 +113,12 @@ public class Radnik implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut ime radnika.
 	 * 
 	 * @param ime novo ime radnika
+	 * @throws java.lang.NullPointerException u slucaju da je uneto ime null
 	 */
 	public void setIme(String ime) {
+		if (ime == null) {
+			throw new NullPointerException("Polje 'ime' radnika ne sme biti prazno!\n");
+		}
 		this.ime = ime;
 	}
 
@@ -131,8 +135,12 @@ public class Radnik implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut prezime radnika.
 	 * 
 	 * @param prezime novo prezime radnika
+	 * @throws java.lang.NullPointerException u slucaju da je uneto prezime null
 	 */
 	public void setPrezime(String prezime) {
+		if (prezime == null) {
+			throw new NullPointerException("Polje 'prezime' radnika ne sme biti prazno!\n");
+		}
 		this.prezime = prezime;
 	}
 
@@ -167,8 +175,16 @@ public class Radnik implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut mejl radnika.
 	 * 
 	 * @param mejl novi mejl radnika
+	 * @throws java.lang.NullPointerException u slucaju da je uneti mejl null
+	 * @throws java.lang.IllegalArgumentException u slucaju da je uneti mejl prazan String
 	 */
 	public void setMejl(String mejl) {
+		if (mejl == null) {
+			throw new NullPointerException("Polje 'mejl' radnika ne sme biti prazno!\n");
+		}
+		if (mejl.isEmpty()) {
+			throw new IllegalArgumentException("Polje 'mejl' radnika ne sme biti prazno!\n");
+		}
 		this.mejl = mejl;
 	}
 

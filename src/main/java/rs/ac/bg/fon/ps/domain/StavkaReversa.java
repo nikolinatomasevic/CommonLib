@@ -57,15 +57,16 @@ public class StavkaReversa implements OpstiDomenskiObjekat {
 	 * @param datumRazduzenja novi datum razduzenja stavke reversa
 	 * @param razduzenaKolicina nova razduzena kolicina stavke reversa
 	 * @param masinaIliAlat nova masina ili alat na koju se odnosi stavka reversa
+	 * @throws Exception 
 	 */
 	public StavkaReversa(Revers revers, Integer rb, Integer zaduzenaKolicina, Date datumRazduzenja,
 			Integer razduzenaKolicina, MasinaIliAlat masinaIliAlat) {
-		this.revers = revers;
-		this.rb = rb;
-		this.zaduzenaKolicina = zaduzenaKolicina;
-		this.datumRazduzenja = datumRazduzenja;
-		this.razduzenaKolicina = razduzenaKolicina;
-		this.masinaIliAlat = masinaIliAlat;
+		setRevers(revers);
+		setRb(rb);
+		setZaduzenaKolicina(zaduzenaKolicina);
+		setDatumRazduzenja(datumRazduzenja);
+		setRazduzenaKolicina(razduzenaKolicina);
+		setMasinaIliAlat(masinaIliAlat);
 	}
 
 	/**
@@ -82,8 +83,12 @@ public class StavkaReversa implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut revers kome pripada ta stavka reversa.
 	 * 
 	 * @param revers novi revers kome pripada ta stavka reversa
+	 * @throws java.lang.NullPointerException u slucaju da je uneti revers null
 	 */
 	public void setRevers(Revers revers) {
+		if (revers == null) {
+			throw new NullPointerException("Polje 'revers' stavke reversa ne sme biti prazno!\n");
+		}
 		this.revers = revers;
 	}
 
@@ -100,8 +105,16 @@ public class StavkaReversa implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut redni broj stavke reversa.
 	 * 
 	 * @param rb novi redni broj stavke reversa
+	 * @throws java.lang.NullPointerException u slucaju da je uneti redni broj null
+	 * @throws java.lang.IllegalArgumentException u slucaju da je uneti redni broj <= 0
 	 */
 	public void setRb(Integer rb) {
+		if (rb == null) {
+			throw new NullPointerException("Polje 'rb' stavke reversa ne sme biti prazno!\n");
+		}
+		if (rb <= 0) {
+			throw new IllegalArgumentException("Polje 'rb' stavke reversa mora sadrzati vrednost koja je >0!");
+		}
 		this.rb = rb;
 	}
 
@@ -118,8 +131,18 @@ public class StavkaReversa implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut zaduzena kolicina stavke reversa.
 	 * 
 	 * @param zaduzenaKolicina nova zaduzena kolicina stavke reversa
+	 * @throws java.lang.NullPointerException u slucaju da je uneta zaduzena kolicina null
+	 * @throws java.lang.IllegalArgumentException u slucaju da je uneta zaduzena kolicina <= 0
 	 */
 	public void setZaduzenaKolicina(Integer zaduzenaKolicina) {
+		if (zaduzenaKolicina == null) {
+			throw new NullPointerException(
+					"Polje 'zaduzena kolicina' (stavka br." + this.rb + ") ne sme biti prazno!\n");
+		}
+		if (zaduzenaKolicina <= 0) {
+			throw new IllegalArgumentException(
+					"Polje 'zaduzena kolicina' (stavka br." + this.rb + ") mora sadrzati vrednost koja je >0!\n");
+		}
 		this.zaduzenaKolicina = zaduzenaKolicina;
 	}
 
@@ -154,8 +177,18 @@ public class StavkaReversa implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut razduzena kolicina stavke reversa.
 	 * 
 	 * @param razduzenaKolicina nova razduzena kolicina stavke reversa
+	 * @throws java.lang.NullPointerException u slucaju da je uneta razduzena kolicina null
+	 * @throws java.lang.IllegalArgumentException u slucaju da je uneta razduzena kolicina < 0
 	 */
 	public void setRazduzenaKolicina(Integer razduzenaKolicina) {
+		if (razduzenaKolicina == null) {
+			throw new NullPointerException(
+					"Polje 'razduzena kolicina' (stavka br." + this.rb + ") ne sme biti prazno!\n");
+		}
+		if (razduzenaKolicina < 0) {
+			throw new IllegalArgumentException(
+					"Polje 'razduzena kolicina' (stavka br." + this.rb + ") mora sadrzati vrednost koja je >=0!\n");
+		}
 		this.razduzenaKolicina = razduzenaKolicina;
 	}
 
@@ -172,8 +205,12 @@ public class StavkaReversa implements OpstiDomenskiObjekat {
 	 * Postavlja novu vrednost za atribut masina ili alat stavke reversa.
 	 * 
 	 * @param masinaIliAlat nova masina ili alat stavke reversa
+	 * @throws java.lang.NullPointerException u slucaju da je uneta masina ili alat null
 	 */
 	public void setMasinaIliAlat(MasinaIliAlat masinaIliAlat) {
+		if (masinaIliAlat == null) {
+			throw new NullPointerException("Polje 'masina ili alat' (stavka br." + this.rb + ") ne sme biti prazno!\n");
+		}
 		this.masinaIliAlat = masinaIliAlat;
 	}
 
